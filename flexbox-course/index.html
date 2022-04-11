@@ -1,14 +1,236 @@
 <!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+
+    <style>
+        html {
+            font-family: 'Oxygen', sans-serif;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        .navbar {
+            background: #eeca00;
+        }
+
+        .navbar div {
+            display: none;
+        }
+
+        .navbar .toggle,
+        .navbar .brand {
+            display: inline-block;
+        }
+
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: #005b6b;
+            color: white;
+        }
+
+        .navbar .link:hover,
+        .navbar .link:active {
+            color: #00012e;
+            background: white;
+        }
+
+        .navbar .brand {
+            text-align: center;
+            padding: 1em;
+            color: white;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .navbar a {
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .navbar .toggle {
+            padding: 1em;
+            color: black;
+        }
+
+        .navbar > .brand img {
+            height: 90px;
+            width: 100%;
+        }
+
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
+            }
+            .navbar .left,
+            .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+            .navbar .link {
+                width: auto;
+            }
+            .navbar .right {
+                justify-content: flex-end;
+            }
+            .navbar .toggle {
+                display: none;
+            }
+        }
+        @media (min-width: 48em) {
+            .navbar div {
+                display: flex;
+            }
+        }
+        @media (max-width: 48em) {
+            .navbar.active .toggle {
+                background: #223047;
+                color: white;
+            }
+            .navbar .brand {
+                text-align: left;
+            }
+            .navbar.active div {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#" class="toggle" id="navHamburger">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="#" class="brand"><img src="./images/create.png" alt="logo"></a>
+        <div class="left">
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
+            <a href="#" class="link">Link 3</a>
+        </div>
+        <div class="right">
+            <a href="#" class="link">Link 4</a>
+            <a href="#" class="link">Link 5</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    const navHamburger = document.querySelector('#navHamburger');
+    navHamburger.addEventListener('click', (e) => {
+        navHamburger.parentElement.classList.toggle('active');
+    })
+</script>
+
+</html>
+
+<!--
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flexbox-capstone</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: 'Dosis', sans-serif;
+        }
+        
+        body {
+            margin: 0px;
+        }
+
+        .navbar {
+            display: flex;
+            height: 70px;
+            background-color: goldenrod;
+        }
+
+        .navbar > .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar > .logo img {
+            height: 110px;
+            width: 100%;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .navbar > .links-wrapper {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            font-size: 0px;
+        }
+
+        .navbar > .links-wrapper > .left {
+            justify-content: center;
+            align-items: center;
+            font-family: 'Dosis', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            height: 100%;
+            margin: 0px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar > .links-wrapper > .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Dosis', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            height: 100%;
+            margin: 0px;
+            border: none;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+
 </head>
 <body>
-    <h1>hi flexbox</h1>
+    <div class="navbar">
+        <div class="logo">
+            <img src="./images/create.png" alt="logo">
+        </div>
 
-    <p>some content</p>
+        <div class="links-wrapper">
+            <div class="left">
+                <button class="btn-link1">Link 1</button>
+                <button class="btn-link2">Link 2</button>
+                <button class="btn-link3">Link 3</button>
+                <button class="btn-link4">Link 4</button>
+            </div>
+            <div class="right">
+                <button class="btn-link5">Link 5</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+-->

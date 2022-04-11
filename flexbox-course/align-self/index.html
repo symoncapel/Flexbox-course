@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      margin: 0;
+      height: calc(100vh - 20px);
+      width: calc(100vw - 20px);
+      border: 10px solid red;
+      display: flex;
+    }
+    img {
+      margin: 10px;
+      width: 100px;
+      height: 60px;
+    }
+
+    .img2 {
+        align-self: center;
+    /*align-self allows you to treat a single flexbox item independent from 
+    the rest of the items within a container*/
+
+    /*BEST PRACTICE:
+        if I want to treat one element different than the others what I'll do is
+        create its own flex containers or create a separate container in a 
+        wrapper class and then I will put all of the rules of one set of items 
+        inside of it. Usually around some other kind of div and then I will 
+        create a separate div and a separate class for the item that I want to 
+        treat differently*/
+
+        /*BUT if you ever do run into a scenario where you have a container that 
+        has a certain number of flexbox items and then you want to treat one of
+        them slightly different then that is what align-self is there for.*/
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="/images/1.jpg" class="img1" alt="">
+    <img src="/images/2.jpg" class="img2" alt="">
+    <img src="/images/3.jpg" class="img3" alt="">
+  </div>
+</body>
+
+</html>
